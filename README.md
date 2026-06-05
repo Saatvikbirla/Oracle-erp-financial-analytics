@@ -1,4 +1,4 @@
-# Real-Time Accounts Payable Executive Cockpit Dashboard
+# Real-Time Accounts Payable Executive Dashboard
 **Domain:** Oracle Cloud ERP (Financials)  
 **Technologies:** Oracle Transactional Business Intelligence (OTBI), Oracle Fusion Applications, Analytics Semantic Layer, XML Analytics Metadata
 
