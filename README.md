@@ -1,37 +1,57 @@
-# Real-Time Accounts Payable Executive Dashboard
-**Domain:** Oracle Cloud ERP (Financials)  
-**Technologies:** Oracle Transactional Business Intelligence (OTBI), Oracle Fusion Applications, Analytics Semantic Layer, XML Analytics Metadata
+# Enterprise Oracle Cloud ERP Financial Analytics Portfolio
+**Domain:** Financials & Supply Chain Management (FSCM) — Accounts Payable Ledger  
+**Developer:** Saatvik Birla  
 
-## 📌 Project Overview
-Designed and deployed an enterprise-grade financial intelligence dashboard within Oracle Fusion Cloud ERP. This cockpit provides corporate executives with an instantaneous radar of accounts payable metrics, workflow processing statuses, and liability exposure trajectories.
+---
 
-Rather than generating flat operational data listings, this solution implements dynamic multi-parameter state filtering and visual anomaly alerts to drastically reduce an executive's time-to-insight.
+## 🏛️ Repository Overview
+This repository contains a comprehensive suite of end-to-end data analytics and business intelligence assets engineered directly inside the Oracle Fusion Cloud ERP ecosystem. It demonstrates proficiency in navigating complex corporate data structures, creating performant logical semantics, writing backend database scripts, and building pixel-perfect financial report deliverables.
 
-## 🛠️ Key Technical Architecture & Implementation
-The project is built modularly using separate analysis definitions joined on a shared dashboard canvas layout:
+---
 
-1. **Global Dynamic Control Filter (`AP_Executive_Dashboard_Prompt`)**
-   * Implements multi-select choice lists bound to `"Supplier"."Supplier Name"` and `"Invoice Details"."Approval Status"`.
-   * Integrates a continuous calendar date range picker utilizing the `is between` SQL comparison operator.
-   * Leverages `is prompted` event listeners to broadcast state selections downstream across all page components simultaneously.
+## 📊 Project 1: Real-Time Accounts Payable Executive Dashboard
+**Category:** Strategic Business Intelligence & Operational Monitoring  
+**Core Tool:** Oracle Transactional Business Intelligence (OTBI)  
+**Data Layer:** `Payables - Invoices Transactions Real Time` Subject Area
 
-2. **Executive Strategic KPI Summary Cards (`AP_Executive_KPI_Tiles`)**
-   * Aggregates real-time financial metrics: Total Invoice Liability (`SUM`), Total Cash Outflow (`SUM`), and Active Document Processing Volume via an optimized `COUNT(DISTINCT "Invoice Number")` expression.
+### 📌 Business Problem & Core Objectives
+Corporate finance executives suffer from informational lag when dealing with high-volume transactional ledgers. Standard transactional rows obscure crucial macro insights like working capital tied up in approval bottlenecks, supplier risk concentrations, and cash flow trends. 
 
-3. **Time-Series Spend Trajectory Graph (`AP_Executive_Spend_Trend`)**
-   * Formats raw transactional ledger timestamps chronologically into aggregated year-month periods.
-   * Maps aggregate spend volume onto an interactive time-series line plot to display historical corporate liability trends.
+This project solves this by constructing a unified executive command deck built on top of real-time transactional streams.
 
-4. **Supplier Operational Bottleneck Pivot Matrix (`AP_Supplier_Vulnerability_Matrix`)**
-   * Transforms flat transaction arrays into a multi-dimensional cross-tab spreadsheet layout.
-   * Columns scale dynamically across `Approval Status` attributes to segment processing pipelines.
-   * **Conditional Optimization:** Implements inline metadata rules targeting records where exposure exceeds a specific fiscal threshold, altering cells to a high-visibility text layout for rapid risk identification.
+### 🛠️ Key Architectural Components
+* **High-Impact KPI Radar:** Engineered real-time summary containers utilizing custom application formatting filters to isolate core operational health metrics including *Total Unpaid Invoices Amount*, *Total Approved Amount*, and *Pending Validation Volume*.
+* **Dynamic Time-Series Analytics:** Modeled a multi-dimensional spend trend line chart mapping historic payment behavior, giving managers clear visibility into quarterly cash outflow cycles.
+* **Supplier Concentration Risk Grid:** Constructed a multi-attribute data table utilizing complex conditional metadata logic to automatically highlight exposure levels exceeding critical enterprise safety thresholds in red.
+* **Interactive Semantic Filtering:** Built a global prompt controller dashboard interface. When a user filters by a specific Business Unit or Vendor, the criteria are passed downward, causing all dashboard components to recalculate concurrently.
 
-## 📁 Repository Structure
-* `/Financial_Analytics_Portfolio.catalog` -> Complete binary archive file for direct import/migration deployment into any standard Oracle BI instance.
-* `/source-xml/` -> Extracted logical metadata code configurations for individual analyses.
-* `/documentation/` -> Screenshots showing full multi-filter dashboard interactions and visual alerts.
+### 📁 Source Directory
+* `/AP_Exec_Dashboard/` -> Contains the binary `.catalog` system transport file along with the individual underlying structural XML configurations.
 
-## 🚀 Impact & Insights
-* **Consolidated Overhead:** Replaced the necessity for 50+ individual vendor reports with a single, highly interactive analytical cockpit.
-* **Operational Auditing:** Enabled AP managers to isolate workflow bottlenecks (e.g., invoices stuck in 'Pending Approval') within 2 clicks.
+---
+
+## 🖨️ Project 2: Pixel-Perfect Global Operational Invoice Package
+**Category:** Compliance Document Engineering & Operational Reporting  
+**Core Tool:** BI Publisher (BIP)  
+**Data Layer:** Direct SQL Relational Modeling via `ApplicationDB_FSCM`
+
+### 📌 Business Problem & Core Objectives
+While drag-and-drop subject areas work well for high-level dashboards, corporate compliance requires highly structured, tamper-proof document attachments (like invoice registers or check printouts) that pull data straight from the database and must comply with exact, branded typography rules.
+
+This project bypasses user application abstractions to query backend database ledger tables directly and generate printable audit documents.
+
+### 🛠️ Key Architectural Components
+* **Direct Relational Database Modeling (`AP_Invoice_Package_DM`):** Written an optimized direct SQL join statement pulling straight from production tables (`ap_invoices_all` and `poz_suppliers_v`). 
+* **Legacy Join Protocols:** Utilized classic Oracle `(+)` outer join notation within the relational mapping layers to guarantee complete data retention, ensuring the document renders historical invoice lines smoothly even if corresponding master supplier parameter properties are null.
+* **Manual XSL-FO Template Engineering:** Hand-coded a complete, lightweight Rich Text Format (`.rtf`) layout layout from scratch. Embedded advanced control block markers (`<?for-each:G_1?>` ... `<?end for-each?>`) to direct the core XML publisher compilation engine to clone tabular frameworks dynamically at runtime.
+* **Typographical Field Modifiers:** Written custom data-handling masks directly inside data cell nodes to convert raw database timestamps and convert unformatted floats into clean accounting currency text strings (`<?format-number:FIELD; '999,G99,D00'?>`).
+
+### 📁 Source Directory
+* `/AP_Invoice_Report/` -> Contains the raw schema database layout (`.xml`) blueprint alongside the manual hand-coded stylesheet template layout (`.rtf`).
+
+---
+
+## 🚀 Technical Skills Verified Across This Portfolio
+* **ERP Domain Expertise:** In-depth understanding of Oracle Fusion Financials ledger structures, supplier tables, and business unit org tracking.
+* **Data Pipelines & Engineering:** Direct SQL query design, database optimization, schema parsing, and hierarchical XML processing.
+* **UI/UX Document Design:** Advanced visual data alignment, custom color grouping, interactive dashboard composition, and responsive analytical design.
